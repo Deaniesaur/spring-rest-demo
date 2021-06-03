@@ -17,4 +17,10 @@ public class GreetingController {
         greeting.setContent(message);
         return greeting;
     }
+
+    @GetMapping("/square")
+    public String square(@RequestParam(value = "number", defaultValue = "0.0") double number){
+        System.out.println("Number = " + number);
+        return "Square of " + number + " = " + Math.pow(number, 2);
+    }
 }
